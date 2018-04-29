@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">亲爱的小猪</span><br />
+				<span class="space comments"/>多谢一次次对我课文背诵的手下留情<br />
+				<span class="space comments"/>多谢每个午后课堂上昏昏欲睡时的特殊提醒<br />
+				<span class="space comments"/>多谢你精心手工为我制作的生日礼物<br />
+				<span class="space comments"/>多谢你在宿舍区大树下一起埋下的小小心愿<br />
+				<span class="space comments"/>多谢初中那些年的鼓励与陪伴~<br />
+				<span class="space comments"/>多谢中考完那年夏天能够欣赏完我不堪入耳的吉他<br />
+				<span class="space comments"/>多谢高一圣诞聚会时和我一起吃的晚饭<br />
+				<span class="space comments"/>多谢高中恋爱时还能找出共同的星座来安慰我<br />
+				<span class="space comments"/>多谢大学在我脆弱的时候对我的留宿与照顾<br />
+				<span class="space comments"/>今天开始，你终于要正式走向你的幸福<br />
+				<span class="space comments"/>我心中的小天使，希望你永远幸福快乐，<br />
+				<span class="space comments"/>我会守护你生命里的精彩，并陪伴你一路精彩下去<br />
+				<span class="space comments"/>所有与你一起的时光，<br />
+				<span class="space comments"/>都是我一辈子最美的回忆<br /><br />
+				<span class="space comments"/>伴着这首你教会我的歌，谨送上我最诚挚的祝福<br />
+				<br />
+				<br />
+				<br />
+				<span class="space comments"/><a href="marriage.html">返回</a></span> 
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						小猪, 要永远幸福哦！
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Bear Chen</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<audio src="123木头人.mp3"  id="music"  autoplay="autoplay"></audio>
+	<script type="text/javascript">
+       
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2006, 8, 1);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
